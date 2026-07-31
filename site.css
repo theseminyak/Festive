@@ -430,7 +430,7 @@ a {
 
   .profile h1 {
     max-width: 360px;
-    font-size: clamp(2.25rem, 12vw, 3.25rem);
+    font-size: clamp(1.8rem, 9vw, 2.5rem);
   }
 
   .sections {
