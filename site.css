@@ -65,10 +65,7 @@ a {
 }
 
 .background-overlay {
-  background:
-    linear-gradient(180deg, #10251e 0%, #182b25 46%, #0c1c17 100%),
-    var(--background);
-  opacity: 0.68;
+  background: #000000;
 }
 
 .page-shell {
