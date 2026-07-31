@@ -151,7 +151,7 @@
     {
       "title": "Resort Themed Nights Dinner",
       "subtitle": "Memorable evenings by the ocean",
-      "carousel": false,
+      "carousel": true,
       "visible": true,
       "links": [
         {
