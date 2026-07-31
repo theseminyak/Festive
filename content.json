@@ -19,7 +19,7 @@
     "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
     "showImage": true,
     "imageOpacity": 0.42,
-    "overlayOpacity": 0.1,
+    "overlayOpacity": 0.5,
     "position": "center center",
     "blur": 1
   },
