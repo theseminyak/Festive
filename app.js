@@ -191,6 +191,61 @@ function createCard(item) {
   return link;
 }
 
+function createCarousel(list, sectionTitle) {
+  const shell = createElement("div", "carousel-shell");
+  const previous = createElement("button", "carousel-button carousel-previous");
+  const next = createElement("button", "carousel-button carousel-next");
+  const previousIcon = createElement("i", "bi bi-chevron-left");
+  const nextIcon = createElement("i", "bi bi-chevron-right");
+
+  previous.type = "button";
+  next.type = "button";
+  previous.setAttribute("aria-label", `Previous ${sectionTitle} items`);
+  next.setAttribute("aria-label", `Next ${sectionTitle} items`);
+  previousIcon.setAttribute("aria-hidden", "true");
+  nextIcon.setAttribute("aria-hidden", "true");
+  previous.appendChild(previousIcon);
+  next.appendChild(nextIcon);
+  list.setAttribute("role", "region");
+  list.setAttribute("aria-label", `${sectionTitle} carousel`);
+  list.setAttribute("tabindex", "0");
+
+  const scrollAmount = () => Math.max(240, list.clientWidth * 0.82);
+
+  const updateControls = () => {
+    const maximumScroll = Math.max(0, list.scrollWidth - list.clientWidth);
+    previous.disabled = list.scrollLeft <= 2;
+    next.disabled = list.scrollLeft >= maximumScroll - 2;
+  };
+
+  previous.addEventListener("click", () => {
+    list.scrollBy({ left: -scrollAmount(), behavior: "smooth" });
+  });
+
+  next.addEventListener("click", () => {
+    list.scrollBy({ left: scrollAmount(), behavior: "smooth" });
+  });
+
+  list.addEventListener("keydown", (event) => {
+    if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") {
+      return;
+    }
+
+    event.preventDefault();
+    list.scrollBy({
+      left: event.key === "ArrowLeft" ? -scrollAmount() : scrollAmount(),
+      behavior: "smooth"
+    });
+  });
+
+  list.addEventListener("scroll", updateControls, { passive: true });
+  window.addEventListener("resize", updateControls);
+  requestAnimationFrame(updateControls);
+
+  shell.append(previous, list, next);
+  return shell;
+}
+
 function renderSections(sections = []) {
   const fragment = document.createDocumentFragment();
 
@@ -219,7 +274,16 @@ function renderSections(sections = []) {
       const list = createElement("div", "link-list");
       visibleLinks.forEach((item) => list.appendChild(createCard(item)));
 
-      sectionElement.append(heading, list);
+      const useCarousel = section.carousel === true && visibleLinks.length > 1;
+
+      if (useCarousel) {
+        sectionElement.classList.add("section-carousel");
+        list.classList.add("is-carousel");
+        sectionElement.append(heading, createCarousel(list, section.title));
+      } else {
+        sectionElement.append(heading, list);
+      }
+
       fragment.appendChild(sectionElement);
     });
 

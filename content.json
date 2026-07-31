@@ -13,7 +13,7 @@
     "card": "#fffdf8",
     "text": "#20312c",
     "mutedText": "#64736d",
-    "accent": ""
+    "accent": "#b89962"
   },
   "background": {
     "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
@@ -71,6 +71,7 @@
     {
       "title": "Resort Activities",
       "subtitle": "Make the most of every day",
+      "carousel": false,
       "visible": true,
       "links": [
         {
@@ -94,6 +95,7 @@
     {
       "title": "Information",
       "subtitle": "Everything you need to know",
+      "carousel": false,
       "visible": true,
       "links": [
         {
@@ -109,6 +111,7 @@
     {
       "title": "Food & Beverage",
       "subtitle": "Menus and dining at the resort",
+      "carousel": false,
       "visible": true,
       "links": [
         {
@@ -148,6 +151,7 @@
     {
       "title": "Resort Themed Nights Dinner",
       "subtitle": "Memorable evenings by the ocean",
+      "carousel": true,
       "visible": true,
       "links": [
         {
@@ -171,11 +175,12 @@
     {
       "title": "Wellness",
       "subtitle": "Time to restore and reconnect",
+      "carousel": false,
       "visible": true,
       "links": [
         {
           "title": "Book Spa Now",
-          "description": "",
+          "description": "Reserve your treatment through WhatsApp.",
           "url": "https://api.whatsapp.com/send?phone=6281802027888",
           "image": "",
           "showImage": false,
