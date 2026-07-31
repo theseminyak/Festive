@@ -1,0 +1,195 @@
+{
+  "site": {
+    "language": "en",
+    "eyebrow": "Welcome to paradise",
+    "name": "The Seminyak Beach Resort & Spa",
+    "description": "5-star beachfront resort in Seminyak",
+    "avatar": "images/e98945f9-5d6e-4651-9211-f8a3d608f30f_Untitled-design.png",
+    "showAvatar": true
+  },
+  "theme": {
+    "background": "#263a34",
+    "surface": "#f4f0e7",
+    "card": "#fffdf8",
+    "text": "#20312c",
+    "mutedText": "#64736d",
+    "accent": "#b89962"
+  },
+  "background": {
+    "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
+    "showImage": true,
+    "imageOpacity": 0.42,
+    "overlayOpacity": 0.68,
+    "position": "center center",
+    "blur": 1
+  },
+  "socials": [
+    {
+      "label": "Instagram",
+      "icon": "instagram",
+      "shortLabel": "IG",
+      "url": "https://instagram.com/theseminyakbeachresort",
+      "visible": true
+    },
+    {
+      "label": "Facebook",
+      "icon": "facebook",
+      "shortLabel": "FB",
+      "url": "https://www.facebook.com/theseminyak",
+      "visible": true
+    },
+    {
+      "label": "TikTok",
+      "icon": "tiktok",
+      "shortLabel": "TT",
+      "url": "https://tiktok.com/@theseminyakbeachresort",
+      "visible": true
+    },
+    {
+      "label": "YouTube",
+      "icon": "youtube",
+      "shortLabel": "YT",
+      "url": "https://www.youtube.com/channel/UCFxXWp69VuM74YL4fF298yQ",
+      "visible": true
+    },
+    {
+      "label": "WhatsApp",
+      "icon": "whatsapp",
+      "shortLabel": "WA",
+      "url": "https://api.whatsapp.com/send?phone=6281802027888",
+      "visible": true
+    },
+    {
+      "label": "Email",
+      "icon": "envelope-fill",
+      "shortLabel": "@",
+      "url": "mailto:info@theseminyak.com",
+      "visible": true
+    }
+  ],
+  "sections": [
+    {
+      "title": "Resort Activities",
+      "subtitle": "Make the most of every day",
+      "visible": true,
+      "links": [
+        {
+          "title": "Guest Activities",
+          "description": "Explore our daily resort experiences.",
+          "url": "https://theseminyak.hflip.co/GuestActivities",
+          "image": "images/0d60f7e1-ae63-4dc0-ba55-52ab143fab98_Canang-Makin-Small.jpeg",
+          "showImage": true,
+          "visible": true
+        },
+        {
+          "title": "Resort Maps",
+          "description": "Find your way around the resort.",
+          "url": "https://theseminyak.hflip.co/Resort-Maps",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "Information",
+      "subtitle": "Everything you need to know",
+      "visible": true,
+      "links": [
+        {
+          "title": "About Us",
+          "description": "Discover our story and beachfront setting.",
+          "url": "https://www.theseminyak.com/about/?utm_source=Social+Media&utm_medium=Social+Media&utm_id=Social+Media",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "Food & Beverage",
+      "subtitle": "Menus and dining at the resort",
+      "visible": true,
+      "links": [
+        {
+          "title": "Infinity Pool Menu",
+          "description": "Refreshments and bites by the pool.",
+          "url": "https://linktr.ee/InfinityPoolSeminyak",
+          "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
+          "showImage": true,
+          "visible": true
+        },
+        {
+          "title": "In Room Dining Menu",
+          "description": "Enjoy resort dining in your room.",
+          "url": "https://theseminyak.hflip.co/InRoomDiningMenu",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        },
+        {
+          "title": "Sanje Restaurant Menu",
+          "description": "Browse our restaurant selections.",
+          "url": "https://drive.google.com/drive/folders/1-ED7aSr3Jkag__YyjSyziFAZwV6F0HT7?usp=drive_link",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        },
+        {
+          "title": "Early Breakfast To Go",
+          "description": "Order breakfast for an early departure.",
+          "url": "https://forms.gle/qN9ECrddaWKsPS62A",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "Resort Themed Nights Dinner",
+      "subtitle": "Memorable evenings by the ocean",
+      "visible": true,
+      "links": [
+        {
+          "title": "Taste of Bali",
+          "description": "A celebration of Balinese flavours and culture.",
+          "url": "https://theseminyak.hflip.co/ThemedNightDinner#page/1",
+          "image": "images/00cd3d1c-3116-4219-a97e-6676cfaf1234_1.jpeg",
+          "showImage": true,
+          "visible": true
+        },
+        {
+          "title": "Seaside Barbecue",
+          "description": "An open-air barbecue beside the beach.",
+          "url": "https://theseminyak.hflip.co/ThemedNightDinner#page/2",
+          "image": "images/8a7f9e72-d928-4ae8-b94a-737f593e6105_Flipping-Book-Todays-Event-Taste-of-bali-x-seaside-bbq.jpeg",
+          "showImage": true,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "Wellness",
+      "subtitle": "Time to restore and reconnect",
+      "visible": true,
+      "links": [
+        {
+          "title": "Book Spa Now",
+          "description": "Reserve your treatment through WhatsApp.",
+          "url": "https://api.whatsapp.com/send?phone=6281802027888",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        },
+        {
+          "title": "Kahyangan Spa",
+          "description": "Explore our spa rituals and treatments.",
+          "url": "https://www.theseminyak.com/wellness/#kahyangan-spa",
+          "image": "",
+          "showImage": false,
+          "visible": true
+        }
+      ]
+    }
+  ]
+}
