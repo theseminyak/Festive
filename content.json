@@ -175,7 +175,7 @@
       "links": [
         {
           "title": "Book Spa Now",
-          "description": "Reserve your treatment through WhatsApp.",
+          "description": "",
           "url": "https://api.whatsapp.com/send?phone=6281802027888",
           "image": "",
           "showImage": false,
