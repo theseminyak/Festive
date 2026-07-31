@@ -71,26 +71,6 @@ a {
   opacity: 0.68;
 }
 
-.glow {
-  position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-}
-
-.glow-one {
-  top: 9rem;
-  left: calc(50% - 28rem);
-  width: 25rem;
-  height: 25rem;
-}
-
-.glow-two {
-  top: 24rem;
-  right: calc(50% - 31rem);
-  width: 18rem;
-  height: 18rem;
-}
-
 .page-shell {
   position: relative;
   z-index: 1;
