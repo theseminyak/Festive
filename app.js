@@ -243,17 +243,6 @@ function createCard(item) {
   }
 
   card.appendChild(copy);
-
-  const indicator = createElement("span", "card-arrow");
-  if (opensPopup) {
-    const icon = createElement("i", "bi bi-image");
-    icon.setAttribute("aria-hidden", "true");
-    indicator.appendChild(icon);
-  } else {
-    indicator.textContent = "↗";
-  }
-
-  card.appendChild(indicator);
   return card;
 }
 

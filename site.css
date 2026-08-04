@@ -65,9 +65,7 @@ a {
 }
 
 .background-overlay {
-  background:
-    linear-gradient(180deg, #10251e 0%, #182b25 46%, #0c1c17 100%),
-    var(--background);
+  background: #000;
   opacity: 0.68;
 }
 
@@ -284,13 +282,6 @@ a {
   text-align: center;
 }
 
-.is-carousel .card-arrow {
-  position: absolute;
-  right: 15px;
-  bottom: 18px;
-  margin: 0;
-}
-
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -338,7 +329,7 @@ a {
 .link-card {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr;
   min-height: 88px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -357,7 +348,7 @@ a {
 }
 
 .link-card.has-image {
-  grid-template-columns: 116px minmax(0, 1fr) auto;
+  grid-template-columns: 116px minmax(0, 1fr);
 }
 
 .link-card:hover {
@@ -399,18 +390,6 @@ a {
   line-height: 1.38;
 }
 
-.card-arrow {
-  align-self: center;
-  margin-right: 22px;
-  color: var(--accent);
-  font-size: 1.15rem;
-  transition: transform 180ms ease;
-}
-
-.link-card:hover .card-arrow {
-  transform: translate(2px, -2px);
-}
-
 .image-dialog {
   width: fit-content;
   max-width: 94vw;
@@ -441,6 +420,7 @@ a {
   height: auto;
   max-width: 94vw;
   max-height: 90vh;
+  aspect-ratio: auto;
   border-radius: 20px;
   background: #162821;
   box-shadow: 0 30px 90px rgba(0, 0, 0, 0.48);
@@ -529,7 +509,7 @@ a {
   }
 
   .link-card.has-image {
-    grid-template-columns: 92px minmax(0, 1fr) auto;
+    grid-template-columns: 92px minmax(0, 1fr);
   }
 
   .card-image {
@@ -549,10 +529,6 @@ a {
     font-size: 0.78rem;
   }
 
-  .card-arrow {
-    margin-right: 16px;
-  }
-
   .is-carousel .card-image {
     width: 100%;
     min-height: 0;
@@ -562,11 +538,6 @@ a {
     padding: 18px 20px 20px;
   }
 
-  .is-carousel .card-arrow {
-    right: 13px;
-    bottom: 18px;
-    margin: 0;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
