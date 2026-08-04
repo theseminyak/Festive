@@ -8,7 +8,7 @@
     "showAvatar": true
   },
   "theme": {
-    "background": "#263a34",
+    "background": "#000000",
     "surface": "#f4f0e7",
     "card": "#fffdf8",
     "text": "#20312c",
@@ -19,7 +19,7 @@
     "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
     "showImage": true,
     "imageOpacity": 0.42,
-    "overlayOpacity": 0.5,
+    "overlayOpacity": 0.0,
     "position": "center center",
     "blur": 1
   },
@@ -76,6 +76,7 @@
       "links": [
         {
           "title": "Guest Activities",
+          "action": "link",
           "description": "Explore our daily resort experiences.",
           "url": "https://theseminyak.hflip.co/GuestActivities",
           "image": "images/0d60f7e1-ae63-4dc0-ba55-52ab143fab98_Canang-Makin-Small.jpeg",
@@ -84,6 +85,7 @@
         },
         {
           "title": "Resort Maps",
+          "action": "link",
           "description": "Find your way around the resort.",
           "url": "https://theseminyak.hflip.co/Resort-Maps",
           "image": "",
@@ -100,6 +102,7 @@
       "links": [
         {
           "title": "About Us",
+          "action": "link",
           "description": "Discover our story and beachfront setting.",
           "url": "https://www.theseminyak.com/about/?utm_source=Social+Media&utm_medium=Social+Media&utm_id=Social+Media",
           "image": "",
@@ -116,6 +119,7 @@
       "links": [
         {
           "title": "Infinity Pool Menu",
+          "action": "link",
           "description": "Refreshments and bites by the pool.",
           "url": "https://linktr.ee/InfinityPoolSeminyak",
           "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
@@ -124,6 +128,7 @@
         },
         {
           "title": "In Room Dining Menu",
+          "action": "link",
           "description": "Enjoy resort dining in your room.",
           "url": "https://theseminyak.hflip.co/InRoomDiningMenu",
           "image": "",
@@ -132,6 +137,7 @@
         },
         {
           "title": "Sanje Restaurant Menu",
+          "action": "link",
           "description": "Browse our restaurant selections.",
           "url": "https://drive.google.com/drive/folders/1-ED7aSr3Jkag__YyjSyziFAZwV6F0HT7?usp=drive_link",
           "image": "",
@@ -140,6 +146,7 @@
         },
         {
           "title": "Early Breakfast To Go",
+          "action": "link",
           "description": "Order breakfast for an early departure.",
           "url": "https://forms.gle/qN9ECrddaWKsPS62A",
           "image": "",
@@ -156,6 +163,9 @@
       "links": [
         {
           "title": "Taste of Bali",
+          "action": "popup",
+          "popupImage": "images/00cd3d1c-3116-4219-a97e-6676cfaf1234_1.jpeg",
+          "popupAlt": "Taste of Bali cultural dinner performance",
           "description": "A celebration of Balinese flavours and culture.",
           "url": "https://theseminyak.hflip.co/ThemedNightDinner#page/1",
           "image": "images/00cd3d1c-3116-4219-a97e-6676cfaf1234_1.jpeg",
@@ -164,6 +174,7 @@
         },
         {
           "title": "Seaside Barbecue",
+          "action": "link",
           "description": "An open-air barbecue beside the beach.",
           "url": "https://theseminyak.hflip.co/ThemedNightDinner#page/2",
           "image": "images/8a7f9e72-d928-4ae8-b94a-737f593e6105_Flipping-Book-Todays-Event-Taste-of-bali-x-seaside-bbq.jpeg",
@@ -180,6 +191,7 @@
       "links": [
         {
           "title": "Book Spa Now",
+          "action": "link",
           "description": "Reserve your treatment through WhatsApp.",
           "url": "https://api.whatsapp.com/send?phone=6281802027888",
           "image": "",
@@ -188,6 +200,7 @@
         },
         {
           "title": "Kahyangan Spa",
+          "action": "link",
           "description": "Explore our spa rituals and treatments.",
           "url": "https://www.theseminyak.com/wellness/#kahyangan-spa",
           "image": "",

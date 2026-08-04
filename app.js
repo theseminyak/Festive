@@ -10,6 +10,9 @@ const elements = {
   eyebrow: document.getElementById("eyebrow"),
   name: document.getElementById("profile-name"),
   description: document.getElementById("profile-description"),
+  imageDialog: document.getElementById("image-dialog"),
+  imageDialogClose: document.getElementById("image-dialog-close"),
+  imageDialogImage: document.getElementById("image-dialog-image"),
   socials: document.getElementById("social-links"),
   sections: document.getElementById("sections"),
   status: document.getElementById("content-status")
@@ -44,6 +47,19 @@ function isSafeUrl(value) {
   try {
     const url = new URL(value, window.location.href);
     return ["http:", "https:", "mailto:", "tel:"].includes(url.protocol);
+  } catch {
+    return false;
+  }
+}
+
+function isSafeImageUrl(value) {
+  if (typeof value !== "string" || !value.trim()) {
+    return false;
+  }
+
+  try {
+    const url = new URL(value, window.location.href);
+    return ["http:", "https:", "file:"].includes(url.protocol);
   } catch {
     return false;
   }
@@ -154,17 +170,57 @@ function renderSocials(socials = []) {
   elements.socials.hidden = elements.socials.childElementCount === 0;
 }
 
+function openImagePopup(item) {
+  const imageSource = item.popupImage || item.image;
+
+  if (!isSafeImageUrl(imageSource)) {
+    return;
+  }
+
+  elements.imageDialogImage.src = imageSource;
+  elements.imageDialogImage.alt = item.popupAlt || item.title;
+  elements.imageDialog.setAttribute("aria-label", `${item.title} image preview`);
+
+  if (typeof elements.imageDialog.showModal === "function") {
+    elements.imageDialog.showModal();
+  }
+}
+
+function setupImageDialog() {
+  elements.imageDialogClose.addEventListener("click", () => {
+    elements.imageDialog.close();
+  });
+
+  elements.imageDialog.addEventListener("click", (event) => {
+    if (event.target === elements.imageDialog) {
+      elements.imageDialog.close();
+    }
+  });
+
+  elements.imageDialog.addEventListener("close", () => {
+    elements.imageDialogImage.removeAttribute("src");
+  });
+}
+
 function createCard(item) {
-  const link = createElement("a", "link-card");
-  link.href = item.url;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.setAttribute("aria-label", `${item.title} — opens in a new tab`);
+  const opensPopup = item.action === "popup";
+  const card = createElement(opensPopup ? "button" : "a", "link-card");
+
+  if (opensPopup) {
+    card.type = "button";
+    card.setAttribute("aria-label", `View ${item.title} image`);
+    card.addEventListener("click", () => openImagePopup(item));
+  } else {
+    card.href = item.url;
+    card.target = "_blank";
+    card.rel = "noopener noreferrer";
+    card.setAttribute("aria-label", `${item.title} — opens in a new tab`);
+  }
 
   const shouldShowImage = item.showImage === true && Boolean(item.image);
 
   if (shouldShowImage) {
-    link.classList.add("has-image");
+    card.classList.add("has-image");
     const image = createElement("img", "card-image");
     image.src = item.image;
     image.alt = "";
@@ -172,9 +228,9 @@ function createCard(item) {
     image.decoding = "async";
     image.addEventListener("error", () => {
       image.remove();
-      link.classList.remove("has-image");
+      card.classList.remove("has-image");
     }, { once: true });
-    link.appendChild(image);
+    card.appendChild(image);
   }
 
   const copy = createElement("div", "card-copy");
@@ -186,9 +242,19 @@ function createCard(item) {
     );
   }
 
-  link.appendChild(copy);
-  link.appendChild(createElement("span", "card-arrow", "↗"));
-  return link;
+  card.appendChild(copy);
+
+  const indicator = createElement("span", "card-arrow");
+  if (opensPopup) {
+    const icon = createElement("i", "bi bi-image");
+    icon.setAttribute("aria-hidden", "true");
+    indicator.appendChild(icon);
+  } else {
+    indicator.textContent = "↗";
+  }
+
+  card.appendChild(indicator);
+  return card;
 }
 
 function createCarousel(list, sectionTitle) {
@@ -252,12 +318,13 @@ function renderSections(sections = []) {
   sections
     .filter((section) => section.visible !== false)
     .forEach((section) => {
-      const visibleLinks = (section.links || []).filter(
-        (item) =>
-          item.visible !== false &&
-          item.title &&
-          isSafeUrl(item.url)
-      );
+      const visibleLinks = (section.links || []).filter((item) => {
+        const hasValidAction = item.action === "popup"
+          ? isSafeImageUrl(item.popupImage || item.image)
+          : isSafeUrl(item.url);
+
+        return item.visible !== false && item.title && hasValidAction;
+      });
 
       if (visibleLinks.length === 0) {
         return;
@@ -315,4 +382,5 @@ async function loadContent() {
   }
 }
 
+setupImageDialog();
 loadContent();
