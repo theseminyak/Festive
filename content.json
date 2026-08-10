@@ -1,9 +1,9 @@
 {
   "site": {
     "language": "en",
-    "eyebrow": "Welcome to paradise",
+    "eyebrow": "Festive Celebration",
     "name": "The Seminyak Beach Resort & Spa",
-    "description": "5-star beachfront resort in Seminyak",
+    "description": "Celebrate the festive season with unforgettable moments by the sea",
     "avatar": "images/e98945f9-5d6e-4651-9211-f8a3d608f30f_Untitled-design.png",
     "showAvatar": true
   },
@@ -69,96 +69,9 @@
   ],
   "sections": [
     {
-      "title": "Resort Activities",
-      "subtitle": "Make the most of every day",
+      "title": "Rooms Offer",
+      "subtitle": "Stay, celebrate, and embrace the magic of the festive season in Seminyak",
       "carousel": false,
-      "visible": true,
-      "links": [
-        {
-          "title": "Guest Activities",
-          "action": "link",
-          "description": "Explore our daily resort experiences.",
-          "url": "https://theseminyak.hflip.co/GuestActivities",
-          "image": "images/0d60f7e1-ae63-4dc0-ba55-52ab143fab98_Canang-Makin-Small.jpeg",
-          "showImage": true,
-          "visible": true
-        },
-        {
-          "title": "Resort Maps",
-          "action": "link",
-          "description": "Find your way around the resort.",
-          "url": "https://theseminyak.hflip.co/Resort-Maps",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        }
-      ]
-    },
-    {
-      "title": "Information",
-      "subtitle": "Everything you need to know",
-      "carousel": false,
-      "visible": true,
-      "links": [
-        {
-          "title": "About Us",
-          "action": "link",
-          "description": "Discover our story and beachfront setting.",
-          "url": "https://www.theseminyak.com/about/?utm_source=Social+Media&utm_medium=Social+Media&utm_id=Social+Media",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        }
-      ]
-    },
-    {
-      "title": "Food & Beverage",
-      "subtitle": "Menus and dining at the resort",
-      "carousel": false,
-      "visible": true,
-      "links": [
-        {
-          "title": "Infinity Pool Menu",
-          "action": "link",
-          "description": "Refreshments and bites by the pool.",
-          "url": "https://linktr.ee/InfinityPoolSeminyak",
-          "image": "images/fabb419d-be83-4172-b7d9-1107e2e48c4e_Infinity-Pool.jpeg",
-          "showImage": true,
-          "visible": true
-        },
-        {
-          "title": "In Room Dining Menu",
-          "action": "link",
-          "description": "Enjoy resort dining in your room.",
-          "url": "https://theseminyak.hflip.co/InRoomDiningMenu",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        },
-        {
-          "title": "Sanje Restaurant Menu",
-          "action": "link",
-          "description": "Browse our restaurant selections.",
-          "url": "https://drive.google.com/drive/folders/1-ED7aSr3Jkag__YyjSyziFAZwV6F0HT7?usp=drive_link",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        },
-        {
-          "title": "Early Breakfast To Go",
-          "action": "link",
-          "description": "Order breakfast for an early departure.",
-          "url": "https://forms.gle/qN9ECrddaWKsPS62A",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        }
-      ]
-    },
-    {
-      "title": "Resort Themed Nights Dinner",
-      "subtitle": "Memorable evenings by the ocean",
-      "carousel": true,
       "visible": true,
       "links": [
         {
@@ -183,31 +96,4 @@
         }
       ]
     },
-    {
-      "title": "Wellness",
-      "subtitle": "Time to restore and reconnect",
-      "carousel": false,
-      "visible": true,
-      "links": [
-        {
-          "title": "Book Spa Now",
-          "action": "link",
-          "description": "Reserve your treatment through WhatsApp.",
-          "url": "https://api.whatsapp.com/send?phone=6281802027888",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        },
-        {
-          "title": "Kahyangan Spa",
-          "action": "link",
-          "description": "Explore our spa rituals and treatments.",
-          "url": "https://www.theseminyak.com/wellness/#kahyangan-spa",
-          "image": "",
-          "showImage": false,
-          "visible": true
-        }
-      ]
-    }
-  ]
-}
+   
