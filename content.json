@@ -95,20 +95,20 @@
           "visible": true
         },
         {
-          "title": "A Christmas to Remember",
+          "title": "Sparkling Festive Holiday",
           "action": "link",
-          "description": "Celebrate the magic of Christmas by the sea",
-          "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=4&adults1=1&children1=0&campaignId=46619&accessCode=DEAL-Christmas",
-          "image": "images/festive 2025 large (2).JPG",
+          "description": "Welcome the New Year with an unforgettable beachfront celebration",
+          "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-29&nbstay=4&adults1=1&children1=0&campaignId=46618&accessCode=CAMP-Sparkling",
+          "image": "images/New Year in Seminyak Bali.png",
           "showImage": true,
           "visible": true
         },
         {
-          "title": "A Christmas to Remember",
+          "title": "Seaside Festive Journey",
           "action": "link",
-          "description": "Celebrate the magic of Christmas by the sea",
-          "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=4&adults1=1&children1=0&campaignId=46619&accessCode=DEAL-Christmas",
-          "image": "images/festive 2025 large (2).JPG",
+          "description": "Celebrate Christmas and the New Year by the sea",
+          "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=10&adults1=1&children1=0&campaignId=46614&accessCode=CAMP-Journey",
+          "image": "images/Festive 2024.jpg",
           "showImage": true,
           "visible": true
         }
