@@ -19,7 +19,7 @@
     "image": "images/festive 2025 large (6).JPG",
     "showImage": true,
     "imageOpacity": 0.42,
-    "overlayOpacity": 0.0,
+    "overlayOpacity": 0.9,
     "position": "center center",
     "blur": 1
   },
