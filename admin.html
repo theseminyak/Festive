@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Website Content Editor</title>
+    <!-- Menggunakan Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Menggunakan Vue 3 untuk reaktivitas data -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <div id="app" class="pb-20">
+        <!-- Sticky Header -->
+        <header class="bg-white shadow-md sticky top-0 z-50 p-4 mb-8 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800">Website Editor (content.json)</h1>
+            <div class="flex gap-4 items-center">
+                <label class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded cursor-pointer font-medium transition">
+                    📂 Load File
+                    <input type="file" accept=".json" class="hidden" @change="loadFile">
+                </label>
+                <button @click="downloadJson" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium shadow transition">
+                    💾 Download content.json
+                </button>
+            </div>
+        </header>
+
+        <main class="max-w-5xl mx-auto px-4 space-y-8">
+            
+            <!-- SECTION: SITE SETTINGS -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">1. Site Settings (Profil)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Nama Website (Name)</label>
+                        <input v-model="content.site.name" type="text" class="w-full border rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Eyebrow (Teks Kecil di Atas)</label>
+                        <input v-model="content.site.eyebrow" type="text" class="w-full border rounded p-2">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold mb-1">Deskripsi Profil</label>
+                        <textarea v-model="content.site.description" class="w-full border rounded p-2" rows="2"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Path Gambar Avatar (cth: images/logo.png)</label>
+                        <input v-model="content.site.avatar" type="text" class="w-full border rounded p-2">
+                    </div>
+                    <div class="flex items-center gap-2 mt-6">
+                        <input v-model="content.site.showAvatar" type="checkbox" id="showAvatar" class="w-5 h-5">
+                        <label for="showAvatar" class="font-semibold cursor-pointer">Tampilkan Avatar</label>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Bahasa (Language)</label>
+                        <input v-model="content.site.language" type="text" class="w-full border rounded p-2" placeholder="en">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: THEME COLORS -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">2. Theme (Warna Tema)</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                    <div v-for="(color, key) in content.theme" :key="key" class="flex flex-col">
+                        <label class="block text-sm font-semibold mb-1 capitalize">{{ key }}</label>
+                        <div class="flex gap-2">
+                            <input v-model="content.theme[key]" type="color" class="w-10 h-10 border rounded cursor-pointer">
+                            <input v-model="content.theme[key]" type="text" class="w-full border rounded p-2 uppercase">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: BACKGROUND -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">3. Background (Latar Belakang)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center gap-2 md:col-span-2 mb-2">
+                        <input v-model="content.background.showImage" type="checkbox" id="showBg" class="w-5 h-5">
+                        <label for="showBg" class="font-semibold cursor-pointer">Tampilkan Gambar Background</label>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Path Gambar (cth: images/bg.jpg)</label>
+                        <input v-model="content.background.image" type="text" class="w-full border rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Posisi (cth: center center)</label>
+                        <input v-model="content.background.position" type="text" class="w-full border rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Opacity Gambar (0.0 - 1.0)</label>
+                        <input v-model.number="content.background.imageOpacity" type="number" step="0.01" min="0" max="1" class="w-full border rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Opacity Overlay Gelap (0.0 - 1.0)</label>
+                        <input v-model.number="content.background.overlayOpacity" type="number" step="0.01" min="0" max="1" class="w-full border rounded p-2">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-1">Blur Efek (0 - 12)</label>
+                        <input v-model.number="content.background.blur" type="number" step="1" min="0" max="12" class="w-full border rounded p-2">
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: SOCIAL MEDIA -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold">4. Social Media Links</h2>
+                    <button @click="addSocial" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">+ Tambah Sosial</button>
+                </div>
+                
+                <div class="space-y-4">
+                    <div v-for="(social, index) in content.socials" :key="index" class="p-4 border rounded bg-gray-50 flex flex-col md:flex-row gap-4 items-start">
+                        <div class="flex-grow grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
+                            <div>
+                                <label class="block text-xs font-semibold mb-1">Label</label>
+                                <input v-model="social.label" type="text" class="w-full border rounded p-1" placeholder="Instagram">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1">URL / Link</label>
+                                <input v-model="social.url" type="text" class="w-full border rounded p-1" placeholder="https://...">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1">Icon Bootstrap (cth: instagram)</label>
+                                <input v-model="social.icon" type="text" class="w-full border rounded p-1">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold mb-1">Short Label</label>
+                                <input v-model="social.shortLabel" type="text" class="w-full border rounded p-1">
+                            </div>
+                            <div class="md:col-span-2 flex gap-4">
+                                <label class="flex items-center gap-1 cursor-pointer">
+                                    <input v-model="social.visible" type="checkbox"> <span class="text-sm font-semibold">Tampilkan Link Ini</span>
+                                </label>
+                            </div>
+                        </div>
+                        <button @click="removeSocial(index)" class="text-red-500 hover:text-red-700 p-2"><i class="bi bi-trash text-xl"></i></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: SECTIONS & LINKS (CARDS) -->
+            <section class="bg-white p-6 rounded-lg shadow">
+                <div class="flex justify-between items-center mb-4 border-b pb-2">
+                    <h2 class="text-xl font-bold">5. Sections & Cards (Konten Utama)</h2>
+                    <button @click="addSection" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">+ Tambah Section Baru</button>
+                </div>
+
+                <div class="space-y-8">
+                    <div v-for="(sec, secIndex) in content.sections" :key="secIndex" class="border-2 border-gray-200 rounded-lg p-4 bg-gray-50">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full pr-4">
+                                <div>
+                                    <label class="block text-sm font-semibold mb-1">Judul Section</label>
+                                    <input v-model="sec.title" type="text" class="w-full border rounded p-2 font-bold">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-semibold mb-1">Sub-Judul</label>
+                                    <input v-model="sec.subtitle" type="text" class="w-full border rounded p-2">
+                                </div>
+                                <div class="md:col-span-2 flex gap-6">
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input v-model="sec.visible" type="checkbox" class="w-4 h-4"> <span class="font-semibold">Tampilkan Section</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 cursor-pointer">
+                                        <input v-model="sec.carousel" type="checkbox" class="w-4 h-4"> <span class="font-semibold">Jadikan Carousel (Slider Horizontal)</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button @click="removeSection(secIndex)" class="text-red-500 hover:text-red-700 font-bold px-2">Hapus Section</button>
+                        </div>
+
+                        <!-- LIST OF LINKS/CARDS IN SECTION -->
+                        <div class="mt-4 pl-4 md:pl-8 border-l-4 border-blue-200 space-y-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="font-bold text-gray-700">Daftar Card di "{{ sec.title || 'Section ini' }}"</h3>
+                                <button @click="addLink(sec)" class="bg-indigo-500 hover:bg-indigo-600 text-white px-2 py-1 rounded text-xs">+ Tambah Card</button>
+                            </div>
+
+                            <div v-for="(link, linkIndex) in sec.links" :key="linkIndex" class="p-4 border rounded bg-white relative">
+                                <button @click="removeLink(sec, linkIndex)" class="absolute top-2 right-2 text-red-500 hover:text-red-700 text-sm"><i class="bi bi-x-circle-fill text-lg"></i></button>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pr-6">
+                                    <div>
+                                        <label class="block text-xs font-semibold mb-1">Judul Card</label>
+                                        <input v-model="link.title" type="text" class="w-full border rounded p-1 font-semibold">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold mb-1">Aksi (Tipe)</label>
+                                        <select v-model="link.action" class="w-full border rounded p-1 bg-white">
+                                            <option value="link">Buka URL (Link Tab Baru)</option>
+                                            <option value="popup">Popup Image (Lightbox)</option>
+                                        </select>
+                                    </div>
+                                    <div class="md:col-span-2">
+                                        <label class="block text-xs font-semibold mb-1">Deskripsi Singkat</label>
+                                        <textarea v-model="link.description" class="w-full border rounded p-1" rows="1"></textarea>
+                                    </div>
+                                    
+                                    <!-- Jika Action = Link -->
+                                    <div v-if="link.action === 'link'" class="md:col-span-2">
+                                        <label class="block text-xs font-semibold mb-1 text-blue-600">URL Tujuan</label>
+                                        <input v-model="link.url" type="text" class="w-full border rounded p-1 border-blue-200">
+                                    </div>
+
+                                    <!-- Jika Action = Popup -->
+                                    <template v-if="link.action === 'popup'">
+                                        <div>
+                                            <label class="block text-xs font-semibold mb-1 text-purple-600">Gambar Popup (Besar)</label>
+                                            <input v-model="link.popupImage" type="text" class="w-full border rounded p-1 border-purple-200">
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-semibold mb-1 text-purple-600">Popup Alt Text</label>
+                                            <input v-model="link.popupAlt" type="text" class="w-full border rounded p-1 border-purple-200">
+                                        </div>
+                                    </template>
+
+                                    <!-- Pengaturan Gambar Card -->
+                                    <div>
+                                        <label class="block text-xs font-semibold mb-1">Path Gambar Card (Thumbnail)</label>
+                                        <input v-model="link.image" type="text" class="w-full border rounded p-1">
+                                    </div>
+                                    
+                                    <div class="flex flex-col justify-center gap-2 mt-2">
+                                        <label class="flex items-center gap-1 cursor-pointer">
+                                            <input v-model="link.showImage" type="checkbox"> <span class="text-xs font-semibold">Tampilkan Gambar di Card</span>
+                                        </label>
+                                        <label class="flex items-center gap-1 cursor-pointer">
+                                            <input v-model="link.visible" type="checkbox"> <span class="text-xs font-semibold">Aktif / Tampilkan Card</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div v-if="!sec.links || sec.links.length === 0" class="text-sm text-gray-400 italic">Belum ada card di section ini.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    // Data default diambil dari format content.json website Anda
+                    content: {
+                        "site": {
+                            "language": "en", "eyebrow": "Festive Celebration", "name": "The Seminyak Beach Resort & Spa", "description": "Celebrate the festive season with unforgettable moments by the sea", "avatar": "images/e98945f9-5d6e-4651-9211-f8a3d608f30f_Untitled-design.png", "showAvatar": true
+                        },
+                        "theme": {
+                            "background": "#000000", "surface": "#f4f0e7", "card": "#fffdf8", "text": "#20312c", "mutedText": "#64736d", "accent": "#b89962"
+                        },
+                        "background": {
+                            "image": "images/festive 2025 large (6).JPG", "showImage": true, "imageOpacity": 0.42, "overlayOpacity": 0.5, "position": "center center", "blur": 1
+                        },
+                        "socials": [
+                            {"label": "Instagram", "icon": "instagram", "shortLabel": "IG", "url": "https://instagram.com/theseminyakbeachresort", "visible": true}
+                        ],
+                        "sections": []
+                    }
+                }
+            },
+            mounted() {
+                // Mencoba memuat file content.json secara otomatis jika berada di localhost/server
+                fetch('content.json')
+                    .then(res => res.json())
+                    .then(data => { this.content = data; })
+                    .catch(e => console.log('Menggunakan data default (Mungkin dibuka via File://)'));
+            },
+            methods: {
+                loadFile(event) {
+                    const file = event.target.files[0];
+                    if (!file) return;
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            this.content = JSON.parse(e.target.result);
+                            alert('Data berhasil dimuat!');
+                        } catch (err) {
+                            alert('Gagal membaca file JSON. Pastikan formatnya benar.');
+                        }
+                    };
+                    reader.readAsText(file);
+                },
+                downloadJson() {
+                    const dataStr = JSON.stringify(this.content, null, 2);
+                    const blob = new Blob([dataStr], { type: "application/json" });
+                    const url = URL.createObjectURL(blob);
+                    
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = 'content.json';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                },
+                addSocial() {
+                    if(!this.content.socials) this.content.socials = [];
+                    this.content.socials.push({ label: '', icon: '', shortLabel: '', url: '', visible: true });
+                },
+                removeSocial(index) {
+                    if(confirm('Hapus link sosial ini?')) this.content.socials.splice(index, 1);
+                },
+                addSection() {
+                    if(!this.content.sections) this.content.sections = [];
+                    this.content.sections.push({ title: 'New Section', subtitle: '', carousel: false, visible: true, links: [] });
+                },
+                removeSection(index) {
+                    if(confirm('Hapus keseluruhan section ini beserta isinya?')) this.content.sections.splice(index, 1);
+                },
+                addLink(section) {
+                    if(!section.links) section.links = [];
+                    section.links.push({
+                        title: 'Card Baru', action: 'link', description: '', url: '', image: '', showImage: true, visible: true, popupImage: '', popupAlt: ''
+                    });
+                },
+                removeLink(section, linkIndex) {
+                    if(confirm('Hapus card ini?')) section.links.splice(linkIndex, 1);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
