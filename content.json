@@ -127,7 +127,7 @@
           "popupAlt": "",
           "description": "",
           "url": "",
-          "image": "images/Christmas Eve Dinner.jpg",
+          "image": "images/1.jpg",
           "showImage": true,
           "visible": true
         },
@@ -138,7 +138,7 @@
           "popupAlt": "",
           "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=4&adults1=1&children1=0&campaignId=46615&accessCode=CAMP-Christmas",
-          "image": "images/Christmas Day Brunch.jpg",
+          "image": "images/2.jpg",
           "showImage": true,
           "visible": true
         },
@@ -147,7 +147,7 @@
           "action": "popup",
           "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-29&nbstay=4&adults1=1&children1=0&campaignId=46618&accessCode=CAMP-Sparkling",
-          "image": "images/Sunset Sparkle Soirée.jpg",
+          "image": "images/3.jpg",
           "showImage": true,
           "visible": true,
           "popupImage": "images/Sunset Sparkle Soirée.jpg"
@@ -157,7 +157,7 @@
           "action": "popup",
           "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=10&adults1=1&children1=0&campaignId=46614&accessCode=CAMP-Journey",
-          "image": "images/New Years Eve Dinner.jpg",
+          "image": "images/4.jpg",
           "showImage": true,
           "visible": true,
           "popupImage": "images/New Years Eve Dinner.jpg"
