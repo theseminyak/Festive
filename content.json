@@ -161,6 +161,25 @@
           "visible": true
         }
       ]
+    },
+    {
+      "title": "For More Information",
+      "subtitle": "",
+      "carousel": false,
+      "visible": true,
+      "links": [
+        {
+          "title": "Reserve Now",
+          "action": "link",
+          "description": "",
+          "url": "https://api.whatsapp.com/send?phone=6281802027888",
+          "image": "",
+          "showImage": true,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
+        }
+      ]
     }
   ]
 }
