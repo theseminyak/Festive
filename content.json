@@ -123,42 +123,44 @@
         {
           "title": "Christmas Eve Dinner",
           "action": "popup",
-          "popupImage": "images/christmas1.jpg",
+          "popupImage": "images/Christmas Eve Dinner.jpg",
           "popupAlt": "",
-          "description": "Celebrate Christmas Eve at our elegant Purnama Pavilion, overlooking the Indian Ocean.",
+          "description": "",
           "url": "",
-          "image": "images/DSC03984 (Large).JPG",
+          "image": "images/Christmas Eve Dinner.jpg",
           "showImage": true,
           "visible": true
         },
         {
-          "title": "Coastal Christmas Holiday",
-          "action": "link",
-          "popupImage": "",
+          "title": "Christmas Day Brunch",
+          "action": "popup",
+          "popupImage": "images/Christmas Day Brunch.jpg",
           "popupAlt": "",
-          "description": "Celebrate the magic of Christmas by the sea",
+          "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=4&adults1=1&children1=0&campaignId=46615&accessCode=CAMP-Christmas",
-          "image": "images/festive 2025 large (6).JPG",
+          "image": "images/Christmas Day Brunch.jpg",
           "showImage": true,
           "visible": true
         },
         {
-          "title": "Sparkling Festive Holiday",
-          "action": "link",
-          "description": "Welcome the New Year with an unforgettable beachfront celebration",
+          "title": "Sunset Sparkle Soirée",
+          "action": "popup",
+          "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-29&nbstay=4&adults1=1&children1=0&campaignId=46618&accessCode=CAMP-Sparkling",
-          "image": "images/New Year in Seminyak Bali.png",
+          "image": "images/Sunset Sparkle Soirée.jpg",
           "showImage": true,
-          "visible": true
+          "visible": true,
+          "popupImage": "images/Sunset Sparkle Soirée.jpg"
         },
         {
-          "title": "Seaside Festive Journey",
-          "action": "link",
-          "description": "Celebrate Christmas and the New Year by the sea",
+          "title": "New Years Eve Dinner",
+          "action": "popup",
+          "description": "",
           "url": "https://redirect.fastbooking.com/DIRECTORY/dispoprice.phtml?HotelName=ASIAIDHTLTheSeminyak&arrival=2026-12-22&nbstay=10&adults1=1&children1=0&campaignId=46614&accessCode=CAMP-Journey",
-          "image": "images/Festive 2024.jpg",
+          "image": "images/New Years Eve Dinner.jpg",
           "showImage": true,
-          "visible": true
+          "visible": true,
+          "popupImage": "images/New Years Eve Dinner.jpg"
         }
       ]
     },
