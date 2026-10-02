@@ -1,8 +1,8 @@
 {
   "site": {
     "language": "en",
-    "eyebrow": "Festive Celebration",
-    "name": "The Seminyak Beach Resort & Spa",
+    "eyebrow": "The Seminyak Beach Resort & Spa",
+    "name": "Festive Celebration",
     "description": "Celebrate the festive season with unforgettable moments by the sea",
     "avatar": "images/e98945f9-5d6e-4651-9211-f8a3d608f30f_Untitled-design.png",
     "showAvatar": true
@@ -112,9 +112,9 @@
           "showImage": true,
           "visible": true
         }
-        ]
-        },
-        {
+      ]
+    },
+    {
       "title": "Christmas Events",
       "subtitle": "Stay, celebrate, and embrace the magic of the festive season in Seminyak",
       "carousel": false,
