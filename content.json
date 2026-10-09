@@ -127,7 +127,7 @@
           "popupAlt": "",
           "description": "",
           "url": "https://theseminyak.hflip.co/christmas-eve",
-          "image": "images/cover - christmas eve dinner.jpeg",
+          "image": "images/Cover2 - Christmas Eve Dinner.jpg",
           "showImage": true,
           "visible": true
         },
@@ -161,6 +161,17 @@
           "showImage": true,
           "visible": true,
           "popupImage": "images/New Years Eve Dinner.jpg"
+        },
+        {
+          "title": "New Year's Eve - The Final Countdown Party",
+          "action": "link",
+          "description": "",
+          "url": "https://theseminyak.hflip.co/NYE-Countdown-Party",
+          "image": "images/Cover - Festive Countdown.jpg",
+          "showImage": true,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
         }
       ]
     },
