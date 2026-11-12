@@ -115,8 +115,8 @@
       ]
     },
     {
-      "title": "Christmas Events",
-      "subtitle": "Stay, celebrate, and embrace the magic of the festive season in Seminyak",
+      "title": "Festive Events",
+      "subtitle": "Celebrate the festive season with unforgettable dining experiences, magical moments, and joyful celebrations in Seminyak.",
       "carousel": false,
       "visible": true,
       "links": [
@@ -168,6 +168,58 @@
           "description": "",
           "url": "https://theseminyak.hflip.co/NYE-Countdown-Party",
           "image": "images/Cover - Festive Countdown.jpg",
+          "showImage": true,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
+        }
+      ]
+    },
+    {
+      "title": "Festive Menu",
+      "subtitle": "",
+      "carousel": false,
+      "visible": true,
+      "links": [
+        {
+          "title": "Christmas Eve Dinner Menu",
+          "action": "link",
+          "description": "",
+          "url": "https://theseminyak.hflip.co/menu-christmas-eve-dinner",
+          "image": "",
+          "showImage": false,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
+        },
+        {
+          "title": "Christmas Day Brunch Menu",
+          "action": "link",
+          "description": "",
+          "url": "https://theseminyak.hflip.co/menu-christmas-day-brunch",
+          "image": "",
+          "showImage": false,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
+        },
+        {
+          "title": "Sunset Sparkle Soirée Menu",
+          "action": "link",
+          "description": "",
+          "url": "https://theseminyak.hflip.co/menu-sunset-soiree",
+          "image": "",
+          "showImage": true,
+          "visible": true,
+          "popupImage": "",
+          "popupAlt": ""
+        },
+        {
+          "title": "New Year's Eve Dinner Menu",
+          "action": "link",
+          "description": "",
+          "url": "https://theseminyak.hflip.co/menu-new-years-eve-dinner",
+          "image": "",
           "showImage": true,
           "visible": true,
           "popupImage": "",
